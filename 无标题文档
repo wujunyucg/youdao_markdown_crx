@@ -1,0 +1,20 @@
+else if(ctrlKey && keyCode == 79) {	
+		var editor=re;
+		var e='1. ',t=editor.getCursorPosition();t.column+=e.length;for(var n=editor.selection.getRange(),r=n.start.row+1;r<n.end.row+2;r++)editor.gotoLine(r),editor.insert(e);editor.moveCursorToPosition(t),editor.focus()
+	} else if(ctrlKey && keyCode == 76) {	
+		var editor=re;
+		var e=editor.selection.smartRange(),t=editor.session.getTextRange(e);0==t.trim().length&&(t='');var n='';editor.session.replace(e,"["+t+"]("+n+")"),editor.focus()
+	} else if(ctrlKey && keyCode == 71) {	
+		var editor=re;
+		var e=editor.session.getTextRange(editor.selection.getRange()).trim(),t=typeof r,n='';"function"===t?(0==e.length&&(e='image'),r(function(t){editor.insert("!["+e+"]("+t+")"),editor.focus()
+	} else if(ctrlKey && keyCode == 75) {	
+		var editor=re;
+		var e=editor.session.getTextRange(editor.selection.getRange()).trim();editor.insert("\n```\n"+e+"\n```\n"),editor.focus(),editor.navigateUp(2),editor.navigateLineEnd()
+	} else if(ctrlKey && keyCode == 84) {	
+		var editor=re;
+		var e=`header 1 | header 2
+---|---
+row 1 col 1 | row 1 col 2
+row 2 col 1 | row 2 col 2`;editor.insert("");var t=editor.getCursorPosition();0==t.column?(editor.selection.clearSelection(),editor.insert("\n"+e+"\n\n")):(editor.navigateTo(editor.getSelectionRange().start.row,Number.MAX_VALUE),editor.insert("\n\n"+e+"\n")),editor.focus()
+	}
+       
